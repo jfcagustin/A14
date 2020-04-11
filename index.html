@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A14</title>
+    <script>
+        function setCookie(cname,cvalue,exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            var user=getCookie("username");
+            if (user != "") {
+                alert("Hi " + user + ", welcome back! This is the use of a cookie.");
+            } else {
+                user = prompt("Hello Professor! This is A14. Please enter your full name:","");
+                if (user != "" && user != null) {
+                    setCookie("username", user, 30);
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="checkCookie()">
+<h1>I got the code for the cookies from W3Schools!</h1>
+
+<h2>Some random text...</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac eros eget nulla scelerisque tincidunt. Quisque venenatis nisi ligula, eu convallis lacus tempor vitae. Nulla pretium, purus sagittis sagittis convallis, mi nisl accumsan libero, sed pharetra quam arcu eget velit. Donec finibus lacus eu erat placerat, id interdum neque tincidunt. Integer condimentum, tortor ut dapibus accumsan, tellus lectus lobortis ante, nec dapibus mi turpis id nisi. Nulla vestibulum eleifend dolor, eget porttitor justo interdum vel. Nulla iaculis nulla et ligula vestibulum cursus. Sed faucibus scelerisque nisi, in ultricies nulla vehicula eget. Aliquam augue nisi, aliquet vel mollis interdum, vehicula quis enim. Cras pulvinar nec orci ac pellentesque. Suspendisse sed libero et eros ultricies fringilla sed id ligula. Etiam consequat eros in justo viverra, quis molestie massa luctus.
+
+    Etiam eget venenatis diam. Pellentesque ut leo pulvinar, pellentesque lacus quis, commodo diam. Duis interdum, ipsum ut elementum suscipit, eros est fermentum velit, id sodales dui enim non est. Nam in ipsum commodo, volutpat quam vel, sollicitudin enim. Proin vitae risus volutpat, iaculis arcu at, ornare arcu. Donec euismod nulla ut metus fringilla elementum. Aenean ac lacus luctus, accumsan nisi vitae, vehicula enim. Mauris sit amet lorem erat. Ut odio orci, commodo sed nibh non, auctor auctor arcu. Vestibulum a massa tincidunt, sagittis felis at, tempor elit. Cras sed luctus nisi. Nullam et risus ac turpis hendrerit vehicula vitae eget augue. Sed nibh felis, tempus in bibendum faucibus, ornare ut ligula. Donec nulla orci, imperdiet et dui tincidunt, consectetur luctus risus.
+
+    Quisque rutrum at arcu sit amet aliquet. Donec justo nunc, sagittis hendrerit sapien at, egestas venenatis eros. Nulla a mattis mauris. Nulla eleifend risus molestie, aliquet nisl sit amet, scelerisque mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus leo neque, elementum et ullamcorper at, faucibus eget felis. Nunc sed dictum nisl. Vivamus metus mauris, lacinia vitae ultricies quis, dignissim et justo. Nam sed metus non eros dignissim tempor. In suscipit ipsum vel augue sodales, sit amet venenatis diam sollicitudin. Duis porta ex eu felis pharetra ornare. Integer lobortis ante sapien, a hendrerit magna maximus maximus. Morbi ultrices eros sed arcu porta posuere. Suspendisse sollicitudin mauris elit, vel pulvinar ligula interdum vel. Nullam at ullamcorper enim, et molestie sem. Suspendisse sodales, mauris et gravida suscipit, diam sapien pretium nibh, rutrum gravida quam mauris in erat.
+
+    Nam urna purus, rhoncus sed odio eget, volutpat rhoncus turpis. Morbi pharetra risus vel erat ullamcorper mattis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam a erat a sem aliquam commodo eget sit amet metus. Maecenas eu gravida risus. Vestibulum auctor sollicitudin eros, nec hendrerit velit tincidunt at. Pellentesque sodales lorem lacus, eget rhoncus justo aliquam sit amet. Vivamus convallis egestas magna, id finibus ante feugiat id.
+
+    Mauris volutpat, mauris eu faucibus pharetra, justo ante dignissim ante, sit amet mollis velit justo sit amet nulla. Sed lorem nibh, placerat a ornare congue, dignissim in dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc lacinia lobortis convallis. Praesent aliquam, diam a aliquet tristique, est sapien pharetra dolor, sit amet euismod purus nunc a tellus. Aliquam eu libero dolor. Duis nec elementum felis. Etiam tempor consectetur consectetur. Suspendisse sit amet quam sem. Cras neque sem, malesuada id tellus ac, euismod aliquet sapien. Donec id lectus dolor.</p>
+
+<footer>
+    <p>&copy; Copyright, Justin Agustin, 2020</p>
+</footer>
+</body>
+</html>
